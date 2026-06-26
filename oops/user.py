@@ -1,8 +1,15 @@
+"""
+constructor-> method.will be called during the object creation
+__init__
+"""
+
 # variables
 # methods
 class User:
     name="test"
     # address="asfasdfsadfds"
+    def __init__(self):
+        print("this is constructor..")
 
     def printDetails(self,name):
         print(self.name,name)
@@ -10,11 +17,11 @@ class User:
 
 # object creation
 user_obj = User()
-user_obj.name =  "test2"
-#calling method
-res = user_obj.printDetails("param")
-print(res)
+# user_obj.name =  "test2"
+# #calling method
+# res = user_obj.printDetails("param")
+# print(res)
 
-user_obj1 = User()
-#calling method
-user_obj1.printDetails("obj2")
+# user_obj1 = User()
+# #calling method
+# user_obj1.printDetails("obj2")
