@@ -1,0 +1,81 @@
+store
+
+front-end->rest api->database 
+
+java,python,.net,node
+spring boot
+
+django
+fastapi
+flask
+
+expressjs,
+
+
+HTTPS
+GET ,POST,PUT,DELETE,PATCH
+
+GET->
+   1.to get the data from server
+   2.passing data will be visisble in the url
+   3.char limit will be thr in the browser
+    Ex:if i want to send 1000chars..GET is not good
+
+post->
+    1.to store the data in the server
+    2.passing data will not be visisble in the url,so data will be separated from the url
+    3.No limit on the data passing
+        Ex:file uplaod,video uplaod,live streaming
+    4.as the data will not visisble in the url it would be good for sendign the secure data
+        Ex:password,otp,login api,register api
+     5.data type should be mention  
+
+PUT,PATCH->update the records in the db
+
+DELETE-->delete the records in the db
+
+
+GET->user
+POST->user
+PUT->user
+DELETE->user
+
+
+Query param
+    data will be the url.it starts with `?` and  split by `&`
+    Ex:www.google.com/search?q=what is AI&name=asdf&address=asdfdsf
+    all HTTP methods can use this
+
+RequestBody
+    data will be separated from the url
+    so apply only Post,Put
+    JSON Data
+
+Path variable:
+     data will be the url.it will be added in the url path
+    Ex:www.instagram.com/search/phone/0988-09-098
+    Ex:www.instagram.com/search/phone/5464645-09-098
+    Ex:www.linkedin.com/in/testuser1
+    Ex:www.linkedin.com/in/testuser2
+    all HTTP methods can use this
+
+
+
+PUT:
+www.sample.com/admin/user/12
+
+{
+"name":"aasffsf",
+city:"asdfa"
+
+}
+
+uvicorn
+
+pip install 
+
+virtual env
+pdf->1
+pdf-2
+
+python -m vnev myenv
