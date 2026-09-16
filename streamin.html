@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FastAPI Streaming Client</title>
+</head>
+<body>
+
+    <h2>Streaming Response</h2>
+
+    <button onclick="startStreaming()">
+        Start Streaming
+    </button>
+
+    <pre id="output"></pre>
+
+    <script>
+        async function startStreaming() {
+            const output = document.getElementById("output");
+
+            output.textContent = "";
+
+            const response = await fetch("http://127.0.0.1:8000/streaming");
+
+            if (!response.ok) {
+                output.textContent = "Request failed";
+                return;
+            }
+
+            // Get the response body as a stream
+            const reader = response.body.getReader();
+
+            // Convert bytes into text
+            const decoder = new TextDecoder();
+
+            while (true) {
+                const { value, done } = await reader.read();
+
+                if (done) {
+                    break;
+                }
+
+                // Display each chunk immediately
+                const text = decoder.decode(value, {
+                    stream: true
+                });
+
+                output.textContent += text;
+            }
+        }
+    </script>
+
+</body>
+</html>

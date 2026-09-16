@@ -7,4 +7,6 @@ class Employee(SQLModel, table=True):
     
     emp_id: int = Field(default=None, primary_key=True)
     name:str
+    email:str
+    password:str
     salary:float

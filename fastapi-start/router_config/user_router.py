@@ -1,4 +1,4 @@
-from fastapi import FastAPI,Depends,Header,Request,APIRouter
+from fastapi import FastAPI,Depends,Header,Request,APIRouter,WebSocket
 from db_config import get_session
 from models import Employee
 from data_models import EmployeeRequest
@@ -12,6 +12,16 @@ router= APIRouter()
 def get_obj( req: Request):
     print(req.headers)#accessing the http headers
     return sample_service()
+
+
+# @router.websocket("/my-ws")
+# async def websocket_endpoint(websocket: WebSocket):
+#     await websocket.accept()
+
+#     while True:
+#         # recv the text from the client
+#         message = await websocket.receive_text()
+#         await websocket.send_text(f"Server received: {message}")
 
 @router.get("/")
 def sample(session: Session = Depends(get_session)):
