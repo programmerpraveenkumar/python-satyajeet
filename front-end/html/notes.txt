@@ -1,0 +1,62 @@
+extenal css
+    css will be declared in the external page
+
+    <link href="file_name" rel="stylesheet"/>
+
+internal css
+    css declared in the html page
+    <style>
+    
+    </style>
+
+inline css
+    it slows the down page loading
+    css will be declared in the element
+    <h1 style=""></h1>
+
+
+css props
+key:value
+color:#2ed9d3
+
+
+classname
+    it can be added to one or more elements
+    declared using dot(.)
+    access using class="name" in the element
+    ex:
+        <h1 class="cls1"></h1>
+id
+    it can be added to only one element
+    should be unique
+    declared using hash(#)
+    access using id="name" in the element
+    ex:
+        <h1 id="id1"></h1>
+
+margin and padding
+
+margin
+create space around the element without bgcolor
+maring-left
+maring-right
+maring-top
+maring-bottom
+
+will apply 50px for all directions
+margin:50px
+
+50px is for top and bottom
+20px right and left
+margin:50px 20px
+
+top rigt&left botto
+margin:50px 20px 10px
+
+
+top right botto left
+margin:50px 20px 10px 56px
+
+
+padding
+create space around the element with bgcolor
