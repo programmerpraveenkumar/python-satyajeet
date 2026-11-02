@@ -33,7 +33,7 @@ function HomeComponent(){
     // if server is success response
     if (response.ok){
       console.log(json_data);
-      // setUserList(json_data);
+      setUserList(json_data);
     }else{
       alert("server error");
     }
