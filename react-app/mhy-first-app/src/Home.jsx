@@ -9,17 +9,22 @@ function HomeComponent(){
   // useState
   const [firstName,setFirstName] = useState('how are you..');
   const [password,setPassword] = useState('');
+  const [age,setAge] = useState('');
+  const [mobile,setMobile] = useState('');
   const [email,setEmail] = useState('');
   const [salary,setSalary] = useState('');
   const [emp_id,setEmpId] = useState('');
   const [user_list,setUserList] = useState([]);
+  // const base_url = "http://127.0.0.1:8000/user/"
+  const base_url = "http://16.176.145.40:8081/api/user";
+
 
 
 
   const getUserData=async()=>{
     // to call the apis
     // axios
-    let response =  await fetch("http://127.0.0.1:8000/user/",
+    let response =  await fetch(base_url,
       {
         method:"GET",
         "headers":{"token":"random-value"}
@@ -28,7 +33,7 @@ function HomeComponent(){
     // if server is success response
     if (response.ok){
       console.log(json_data);
-      setUserList(json_data);
+      // setUserList(json_data);
     }else{
       alert("server error");
     }
@@ -42,9 +47,11 @@ function HomeComponent(){
       "emp_id":emp_id,
       "salary":salary,
       "email":email,
+      "age":age,
+      "mobile":mobile,
       "password":password,
     };
-    let response =  await fetch("http://127.0.0.1:8000/user/",
+    let response =  await fetch(base_url,
       {
         "method":"POST",
         "body":JSON.stringify(data),
@@ -80,10 +87,10 @@ function HomeComponent(){
           {
             user_list.map((ele)=>{
               return <li >
-                <b className={(ele.salary>50000)?'highlight':null}>Name</b>:{ele.name} <br/>
-                <b>Id</b>: {ele.emp_id}<br/>
-                <b>Salary</b>: {ele.salary}<br/>
-                <b>Email</b>: {ele.email}<br/>
+                <b className={(ele?.salary>50000)?'highlight':null}>Name</b>:{ele?.name} <br/>
+                <b>Id</b>: {ele?.emp_id}<br/>
+                <b>Salary</b>: {ele?.salary}<br/>
+                <b>Email</b>: {ele?.email}<br/>
 
                 </li>
             })
@@ -96,6 +103,8 @@ function HomeComponent(){
         <input onChange={(e)=>setEmpId(e.target.value)} type="text" placeholder="Enter Emp id" />
         <input onChange={(e)=>setEmail(e.target.value)} type="text" placeholder="Enter email" />
         <input onChange={(e)=>setSalary(e.target.value)} type="text" placeholder="Enter salary" />
+        <input onChange={(e)=>setMobile(e.target.value)} type="text" placeholder="Enter Mobile" />
+        <input onChange={(e)=>setAge(e.target.value)} type="text" placeholder="Enter age" />
         <input onChange={(e)=>setPassword(e.target.value)} type="password" placeholder="Enter Password" />
 
         {/* always register the function from button click in react */}
