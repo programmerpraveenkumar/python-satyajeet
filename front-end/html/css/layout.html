@@ -45,15 +45,42 @@
             font-size: 25px;
             text-decoration: none;
         }
+         .menu_btn{
+                    display: none;
+                }
+         @media screen and (max-width: 600px) {
+            .my_menu{
+                flex-direction: column;
+                display: none;
+            }
+            .my_div{
+                flex-direction: column;
+                height: auto;
+            }
+                .div1,.div2,.div3,.div4,.div5,.div6{
+                    width: 100%;
+                }
+                .menu_btn{
+                    display: block;
+                }
+        }
+        @media screen and (min-width: 1300px) {
+        body{
+            background-color: chartreuse;
+        }
+        }
+                
     </style>
 </head>
 <body>
+    
     <header>
+        <button class="menu_btn">Show Menu</button>
         <ul class="my_menu">
             <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="#">Contact</a></li>
-            <li><a href="#">Login/Register</a></li>
+            <li><a href="login.html">Login/Register</a></li>
 
         </ul>
     </header>

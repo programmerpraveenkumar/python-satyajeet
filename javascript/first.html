@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        document.write("<h1>hello good morning</h1>");
+        document.write("<h1>hello how are you</h1>");
+        console.log("sample console")
+        function writeInConsole(){
+            // to write or read only from input elements
+            let val = document.querySelector(".input1_class").value;
+            let val2 = document.querySelector(".input2_class").value;
+            let action = document.querySelector("#select_id").value
+            if (val == ""){
+                document.querySelector(".h1_class").innerHTML="Please enter the number1"
+                return
+            }
+            if (val2 == ""){
+                document.querySelector(".h1_class").innerHTML="Please enter the number2";
+                return
+            }
+            let result =0;
+            if (action == "add"){
+                     result = parseInt(val)+parseInt(val2)
+            }
+            if (action == "sub"){
+                     result = parseInt(val)-parseInt(val2)
+            }
+            if (action == "mul"){
+                     result = parseInt(val)*parseInt(val2)
+            }
+            if (action == "div"){
+                     result = parseInt(val)/parseInt(val2)
+            }
+            // let result = val+val2;
+            // console.log('from the button click inside the function') input()
+            console.log(result)
+
+            // to write or read into the html element exclude the inputs
+            document.querySelector(".h1_class").innerHTML=result
+        }
+
+        
+
+    </script>
+</head>
+<!-- 
+    v8engine-2007->google
+    javascript->c++->
+    nodejs
+ -->
+<body>
+    <input class="input1_class" type="text" placeholder="Enter Number">
+    <input class="input2_class" type="text" placeholder="Enter Number 2">
+    <select id="select_id">
+
+        <option>add</option>
+        <option>sub</option>
+        <option>mul</option>
+        <option>div</option>
+
+    </select>
+    <h1 class="h1_class">write something</h1>
+    <button onclick="writeInConsole()">Click me</button>
+    
+</body>
+</html>

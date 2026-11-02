@@ -1,0 +1,54 @@
+Javascript
+	dom manipulation (document object model(html))
+		Any changes can be done using js in html document 
+	event handling 
+		mouse events
+		keyboard events
+	variable ,oops, array,json,filter,map,exception handling
+	Rest api integration(get,post,put,delete)
+	localstorage,sessionStorage
+
+		localstorage:
+		data will be permanent in localstorage
+		if user uninstall browser or delete history data will be delete
+		Ex:
+		Gmail,social media apps.
+		
+		sessionStorage:
+		data will be temp.
+		If user closes the browser or tab data will be removed.
+		ex:
+		banking apps, secure apps
+	
+	Store the jwt token
+
+
+
+
+url
+httm method-:>post,get,put,delete
+data
+await coroutine
+async/await
+
+promise
+task dont know the completed time
+calling the server
+fetch("url",{"method":"GET"});
+
+fetch("url",{"method":"POST",body:{},"header:{"content-type":"application/json"}});
+fetch("url",{"method":"PUT",body:{},"header:{"content-type":"application/json"}});
+
+//always awawit will come inside the async
+async function getData(){
+	let response = await fetch("url",{"method":"GET"});
+}
+
+function hello(){
+
+
+}
+
+getData()
+hello()
+

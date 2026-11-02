@@ -34,6 +34,17 @@ id
     ex:
         <h1 id="id1"></h1>
 
+block or inline
+
+block:
+    always takes full width.
+    ex: div,header,p,h1.etc
+    block tags can hold other tags
+inline:
+    only the for the content it takes width
+    ex:span,a,input.etc
+    inline tags cannot hold other tags
+
 margin and padding
 
 margin
@@ -60,3 +71,5 @@ margin:50px 20px 10px 56px
 
 padding
 create space around the element with bgcolor
+
+css positions

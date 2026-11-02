@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // localstorage
+            //setItem("key","value"),getItem("key")
+            // browser memeory
+            // if user deletes the history and uninstall the browser data will be removed
+        //SESSION
+            // when user closes the browser.data will be removed
+        function setLocal(){
+            localStorage.setItem("city","banglore")
+        }
+
+        function getLocal(){
+            let  city = localStorage.getItem("city");
+            console.log(city);
+        }
+
+        function setLocalSession(){
+            sessionStorage.setItem("token_id","098790707")
+        }
+
+        function getLocalSession(){
+            let  city = sessionStorage.getItem("token_id");
+            console.log(city);
+            
+        }
+
+    </script>
+</head>
+<body>
+    <button onclick="setLocal()">Store in local</button>
+    <button  onclick="getLocal()">get in local</button>
+    <button onclick="setLocalSession()">Store in session</button>
+    <button  onclick="getLocalSession()">get in session</button>
+</body>
+</html>

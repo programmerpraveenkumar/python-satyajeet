@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .my_div{
+                display: flex;
+                /* view height */
+                height: 30vh;
+        }
+        .div1{
+            width: 50%;
+            background-color: red;
+        }
+
+        .div2{
+            background-color: hsl(144, 100%, 50%);
+            width: 50%;
+        }
+        .div4{
+            background-color: hsl(144, 100%, 50%);
+            width: 20%;   
+        }
+        .div5{
+            background-color: lab(53.55% 84.58 -18.47);
+            width: 60%; 
+        }
+        .div6{
+            background-color: #1d08fa;
+            width: 20%; 
+        }
+        .my_menu{
+                display: flex;
+                background-color: antiquewhite;
+                padding: 2% 0;
+                margin: 0;
+        }
+        li{
+            list-style-type: none;
+            margin:0px 2%
+        }
+        a{
+            font-size: 25px;
+            text-decoration: none;
+        }
+        /* all inputs inside the login_form class */
+        .login_form input,.login_form button{
+                width: 50%;
+                padding: 1%;
+                margin-bottom: 1%;
+        } 
+    </style>
+</head>
+<body>
+    <header>
+        <ul class="my_menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Login/Register</a></li>
+
+        </ul>
+    </header>
+    
+     <div class="my_div">
+        <div class="div4">div1</div>
+        <div class="div5 login_form">
+            <h2>Login form</h2>
+            <div>
+            <input type="text" placeholder="Enter username">
+
+            </div>
+            <div>
+            <input type="password" placeholder="Enter password">
+
+            </div>
+            <div>
+            <button>Login</button>
+            </div>
+        </div>
+        <div class="div6">div3</div>
+    </div>
+
+    <!-- by using css change the block to inline or vice versa -->
+    <div style="background-color: red;">hi how are you</div>
+    <span style="background-color: blue;">hi how are you</span>
+
+
+</body>
+</html>
