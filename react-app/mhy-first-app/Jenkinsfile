@@ -1,0 +1,55 @@
+
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git branch: 'master',
+                    url: 'https://github.com/programmerpraveenkumar/python-satyajeet.git'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                dir('react-app/mhy-first-app') {
+                    sh 'docker build -t react-frontend:latest .'
+                }
+            }
+        }
+
+        stage('Deploy React Application') {
+            steps {
+                sh '''
+                    docker rm -f react-frontend || true
+
+                    docker run -d \
+                        --name react-frontend \
+                        --restart unless-stopped \
+                        -p 8082:80 \
+                        react-frontend:latest
+                '''
+            }
+        }
+
+        stage('Verify Deployment') {
+            steps {
+                sh '''
+                    sleep 5
+                    docker ps --filter name=react-frontend
+                    curl -f http://localhost:8082
+                '''
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'React application deployed successfully!'
+        }
+        failure {
+            echo 'React deployment failed. Check the logs.'
+        }
+    }
+}
