@@ -48,7 +48,7 @@ function HomeComponent(){
       "salary":salary,
       "email":email,
       "age":age,
-      "mobile":mobile,
+      "mobile":Number(mobile),
       "password":password,
     };
     let response =  await fetch(base_url,
