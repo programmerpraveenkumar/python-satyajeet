@@ -16,7 +16,7 @@ function HomeComponent(){
   const [emp_id,setEmpId] = useState('');
   const [user_list,setUserList] = useState([]);
   // const base_url = "http://127.0.0.1:8000/user/"
-  const base_url = "http://16.176.145.40:8081/api/user";
+  const base_url = "http://3.25.245.75:8081/api/user";
 
 
 
