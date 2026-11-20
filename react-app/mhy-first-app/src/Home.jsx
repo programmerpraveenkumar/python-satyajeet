@@ -41,7 +41,7 @@ function HomeComponent(){
       console.log(new_form);
   }
   // const base_url = "http://127.0.0.1:8000/user/"
-  const base_url = "http://32.236.127.237/:8081/api/user";
+  const base_url = "http://32.236.127.237:8081/api/user";
 
 
   //  load only once during the page loading
