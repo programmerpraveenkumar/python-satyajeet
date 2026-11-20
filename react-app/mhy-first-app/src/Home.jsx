@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import MenuComponent from "./MenuComponent";
 
 function HomeComponent(){
   // below variables will not update and in ui
   let msg = "hi";
   let personList = ['adf','swerfert','ioewuhrdisu']
+
+  // reference the html element to the react
+  // using ref we can have js functions in react
+  const h1_ref = useRef();
   // state variable will help to update in ui 
   // useState
   const [firstName,setFirstName] = useState('how are you..');
@@ -15,10 +19,41 @@ function HomeComponent(){
   const [salary,setSalary] = useState('');
   const [emp_id,setEmpId] = useState('');
   const [user_list,setUserList] = useState([]);
+
+  const [new_form,setNewForm]= useState({
+    "first_name":"",
+    "emp_id":"",
+    "email":"",
+    "salary":""
+  })
+
+
+  // arrow function
+  const handleChange=(e)=>{
+      setNewForm({
+        ...new_form,
+       [e.target.name]:e.target.value
+      })
+  }
+
+
+   const printState=(e)=>{
+      console.log(new_form);
+  }
   // const base_url = "http://127.0.0.1:8000/user/"
-  const base_url = "http://3.25.245.75:8081/api/user";
+  const base_url = "http://32.236.127.237/:8081/api/user";
 
+  //  load only once during the page loading
+  useEffect(()=>{
+    console.log("from use effect")
+  },[])
 
+  // whenever state variable changes below will trigger
+  useEffect(()=>{
+    console.log("changing firstName ",firstName)
+    // write the text into the html element
+    h1_ref.current.innerHTML = firstName; 
+  },[firstName])
 
 
   const getUserData=async()=>{
@@ -88,7 +123,7 @@ function HomeComponent(){
             user_list.map((ele)=>{
               return <li >
                 <b className={(ele?.salary>50000)?'highlight':null}>Name</b>:{ele?.name} <br/>
-                <b>Id</b>: {ele?.emp_id}<br/>
+                <b>Id</b>: {ele?.id}<br/>
                 <b>Salary</b>: {ele?.salary}<br/>
                 <b>Email</b>: {ele?.email}<br/>
 
@@ -106,10 +141,20 @@ function HomeComponent(){
         <input onChange={(e)=>setMobile(e.target.value)} type="text" placeholder="Enter Mobile" />
         <input onChange={(e)=>setAge(e.target.value)} type="text" placeholder="Enter age" />
         <input onChange={(e)=>setPassword(e.target.value)} type="password" placeholder="Enter Password" />
-
+        
+        {/* reference the html to react using useref */}
+        <h1 ref={h1_ref}>this is simpel h1</h1>
+          
         {/* always register the function from button click in react */}
         <button onClick={storeUserData}> Store Emp Details</button>
         <button onClick={getUserData}>Click to get user data</button>
+
+        <h1>new Form</h1>
+        <input name="first_name" onChange={ handleChange} type="text" placeholder="Enter First name" />
+        <input name="emp_id" onChange={handleChange } type="text" placeholder="Enter Emp id" />
+        <input name="email" onChange={ handleChange} type="text" placeholder="Enter email" />
+        <input name="salary" onChange={ handleChange} type="text" placeholder="Enter salary" />
+        <button onClick={printState}>Check common useState</button>
     </>
   )
 }
