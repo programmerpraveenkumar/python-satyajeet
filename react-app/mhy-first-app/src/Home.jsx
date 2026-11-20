@@ -43,6 +43,7 @@ function HomeComponent(){
   // const base_url = "http://127.0.0.1:8000/user/"
   const base_url = "http://32.236.127.237/:8081/api/user";
 
+
   //  load only once during the page loading
   useEffect(()=>{
     console.log("from use effect")
@@ -109,7 +110,7 @@ function HomeComponent(){
   return (
     <>
         <MenuComponent myCurrentPage="home"/>
-            <h1>this is my home Component</h1>
+            <h1>this is my home Component new deployment</h1>
         <h2>Message is {msg}</h2>
         <ul>
         {
